@@ -9,4 +9,4 @@ WORKDIR /app
 COPY app.py /app/app.py
 COPY test_app.py /app/test_app.py
 
-CMD uvicorn app:app
+CMD uvicorn app:app --port $PORT

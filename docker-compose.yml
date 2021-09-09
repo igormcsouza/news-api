@@ -5,4 +5,5 @@ services:
     build: .
     environment: 
       - ENVIRONMENT=DEVELOP
+      - PORT=8888
   
