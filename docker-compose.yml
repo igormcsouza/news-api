@@ -5,7 +5,4 @@ services:
     build: .
     environment: 
       - ENVIRONMENT=DEVELOP
-      - PORT=5963
-    ports: 
-      - 5936:5963
   
