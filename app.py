@@ -6,7 +6,7 @@ from pydantic import BaseModel
 from GoogleNews import GoogleNews
 
 
-app = FastAPI(debug=False if getenv("ENVIRONMENT") == "PROD" else True)
+app = FastAPI(debug=True if getenv("ENVIRONMENT") == "DEVELOP" else False)
 googlenews = GoogleNews(lang='en', period="7d", encode='utf-8')
 
 
