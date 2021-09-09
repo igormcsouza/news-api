@@ -1,0 +1,6 @@
+fastapi==0.68.1
+uvicorn==0.15.0
+GoogleNews==1.5.9
+# Test packages
+pytest==6.2.5
+requests
