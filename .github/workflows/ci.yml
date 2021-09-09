@@ -1,0 +1,13 @@
+name: Continuous Integration
+
+on: [push, pull_request]
+
+jobs:
+  web:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Build the docker image
+        run: docker-compose build
+      - name: Use pytest to execute the tests
+        run: docker-compose run web pytest
