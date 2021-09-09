@@ -5,4 +5,7 @@ services:
     build: .
     environment: 
       - ENVIRONMENT=DEVELOP
+      - PORT=8001
+    ports: 
+      - 8001:8001
   
