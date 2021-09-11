@@ -14,7 +14,7 @@ googlenews = GoogleNews(lang='en', period="7d", encode='utf-8')
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://localhost:5500",
+        "http://localhost:5500",  # TODO: This has to leave after testing
         "https://igormcsouza.github.io"],
     allow_credentials=True,
     allow_methods=["*"],
