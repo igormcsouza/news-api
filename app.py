@@ -2,12 +2,24 @@ from os import getenv
 from typing import Dict, List, Tuple
 
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from GoogleNews import GoogleNews
 
 
 app = FastAPI(debug=True if getenv("ENVIRONMENT") == "DEVELOP" else False)
 googlenews = GoogleNews(lang='en', period="7d", encode='utf-8')
+
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:5500",  # TODO: This has to leave after testing
+        "https://igormcsouza.github.io"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 class RequestBody(BaseModel):
