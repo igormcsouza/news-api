@@ -1,0 +1,14 @@
+version: 1.0
+runtime: python3
+run:
+  runtime-version: 3.7
+  network:
+    port: 8000
+    env: MY_APP_PORT
+
+build:
+  commands:
+    build:
+      - pip install -r requirements.txt
+
+
