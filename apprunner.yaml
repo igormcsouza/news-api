@@ -13,4 +13,3 @@ run:
     port: 8000
     env: MY_APP_PORT
   command: uvicorn app:app --port $MY_APP_PORT
-
