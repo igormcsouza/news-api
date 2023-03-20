@@ -22,6 +22,11 @@ app.add_middleware(
 )
 
 
+@app.get("/healthcheck")
+def read_root():
+    return {"status": "ok"}
+
+
 class RequestBody(BaseModel):
     topic: str
 
