@@ -8,7 +8,6 @@ from GoogleNews import GoogleNews
 
 
 app = FastAPI(debug=True if getenv("ENVIRONMENT") == "DEVELOP" else False)
-googlenews = GoogleNews(lang='en', period="7d", encode='utf-8')
 
 
 app.add_middleware(
@@ -40,6 +39,7 @@ class ResponseBody(BaseModel):
 
 @app.post("/fetch")
 def fetch(body: RequestBody) -> ResponseType:
+    googlenews = GoogleNews(lang='en', period="7d", encode='utf-8')
 
     try:
         googlenews.get_news(body.topic)
@@ -51,3 +51,4 @@ def fetch(body: RequestBody) -> ResponseType:
     parse = [(t['title'], t['link'], t['date']) for t in top]
 
     return {'headlines': parse}
+
