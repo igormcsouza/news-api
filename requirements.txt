@@ -4,5 +4,5 @@ GoogleNews==1.6.6
 
 # Test packages
 pytest==6.2.5
-flake8==6.0.0
+flake8==5.0.4
 requests
