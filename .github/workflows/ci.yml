@@ -6,8 +6,11 @@ jobs:
   web:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - name: Build the docker image
-        run: docker-compose build
-      - name: Use pytest to execute the tests
-        run: docker-compose run web pytest
+      - uses: actions/checkout@v3
+      - name: Install Requirements
+        run: pip install -r requirements.txt
+      - name: Run Linter on python code with flake8
+        run: flake8
+      - name: Use pytest to run unittests
+        run: pytest
+
