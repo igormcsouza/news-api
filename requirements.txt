@@ -1,6 +1,6 @@
 fastapi==0.68.1
 uvicorn==0.15.0
-GoogleNews==1.6.6
+GoogleNews==1.6.14
 
 # Test packages
 pytest==6.2.5
